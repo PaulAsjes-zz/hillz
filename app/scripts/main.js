@@ -22,10 +22,10 @@ Hillz.prototype.render = function() {
     str +=`
       <div class="question">
         <h3 class="title animated"><p>${question.title}</p></h3>
-        <${isArgumentList ? 'ul' : 'div'} class="argument-container">${isArgumentList ?
+        <${isArgumentList ? 'ul' : 'div'} class="argument-container animated">${isArgumentList ?
           question.argument.map((bullet, index) => {
-            return `<li class="argument animated">${bullet}</li>`;
-          }).join('') : `<div>${question.argument}</div>`}
+            return `<li class="argument">${bullet}${index === question.argument.length - 1 ? `<div class="source">Click to see sources</div>` : ''}</li>`;
+          }).join('') : `<div class="argument animated">${question.argument}<div class="source">Click to see sources</div></div>`}
         </${isArgumentList ? 'ul' : 'div'}>
         <ul class="sources">
         ${question.sources.map((source) => {
@@ -47,8 +47,19 @@ Hillz.prototype.onScroll = function() {
 };
 
 Hillz.prototype.expandArgument = function(e) {
-  const $current = $(e.currentTarget);
-  $current.off('click').css('cursor', 'default');
+  $(e.currentTarget)
+    .off('click')
+    .css('cursor', 'default')
+    .next()
+    .addClass('active bounceInRight')
+    .find('.source')
+    .click(this.showSource.bind(this));
+};
 
-
+Hillz.prototype.showSource = function(e) {
+  console.log($(e.currentTarget).closest('.question').find('.sources'));
+  $(e.currentTarget)
+    .closest('.question')
+    .find('.sources')
+    .slideDown();
 };
