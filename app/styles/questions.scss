@@ -6,6 +6,7 @@
     margin: 2em;
 
     $titlered: #e24252;
+    $muricablue: #0052A5;
     $border: #c2e1f5;
 
     .title {
@@ -13,6 +14,7 @@
       background: $titlered;
       border: 4px solid $border;
       border-radius: 10px;
+      cursor: pointer;
 
       p {
         padding: 1em;
@@ -43,51 +45,55 @@
       }
 
       &:before {
-          // border-color: rgba(194, 225, 245, 0);
           border-right-color: $border;
           border-width: 36px;
           margin-top: -36px;
       }
     }
 
-    .argument {
-      position: relative;
-      background: $muricablue;
-      border: 4px solid $border;
-      border-radius: 10px;
+    .argument-container {
+      .argument {
+        // opacity: 0;
+        // display: none;
 
-      ul, div {
+        position: relative;
+        background: $muricablue;
+        border: 4px solid $border;
+        border-radius: 10px;
+        margin-bottom: 10px;
+
+        list-style: none;
         padding: 1em;
         color: #ddf8c6;
         text-align: center;
-        font-size: 42px;
+        font-size: 22px;
         font-weight: bold;
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-      }
 
-      &:after, &:before {
-        left: 100%;
-        top: 50%;
-        border: solid transparent;
-        content: " ";
-        height: 0;
-        width: 0;
-        position: absolute;
-        pointer-events: none;
-      }
+        &:after, &:before {
+          left: 100%;
+          top: 50%;
+          border: solid transparent;
+          content: " ";
+          height: 0;
+          width: 0;
+          position: absolute;
+          pointer-events: none;
+        }
 
-      &:after {
-        border-color: rgba(136, 183, 213, 0);
-        border-left-color: $muricablue;
-        border-width: 30px;
-        margin-top: -30px;
-      }
+        &:after {
+          border-color: rgba(136, 183, 213, 0);
+          border-left-color: $muricablue;
+          border-width: 30px;
+          margin-top: -30px;
+        }
 
-      &:before {
-        border-color: rgba(194, 255, 245, 0);
-        border-left-color: $border;
-        border-width: 36px;
-        margin-top: -36px;
+        &:before {
+          border-color: rgba(194, 255, 245, 0);
+          border-left-color: $border;
+          border-width: 36px;
+          margin-top: -36px;
+        }
       }
     }
   }

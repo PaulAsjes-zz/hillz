@@ -11,6 +11,8 @@ function Hillz(data) {
   this.data = data;
 
   this.render();
+
+  // window.addEventListener('scroll', this.onScroll);
 }
 
 Hillz.prototype.render = function() {
@@ -19,11 +21,11 @@ Hillz.prototype.render = function() {
     const isArgumentList = Array.isArray(question.argument);
     str +=`
       <div class="question">
-        <h3 class="title"><p>${question.title}</p></h3>
-        <${isArgumentList ? 'ul' : 'div'} class="argument">${isArgumentList ?
+        <h3 class="title animated"><p>${question.title}</p></h3>
+        <${isArgumentList ? 'ul' : 'div'} class="argument-container">${isArgumentList ?
           question.argument.map((bullet, index) => {
-            return `<li>${bullet}</li>`;
-          }) : `<div>${question.argument}</div>`}
+            return `<li class="argument animated">${bullet}</li>`;
+          }).join('') : `<div>${question.argument}</div>`}
         </${isArgumentList ? 'ul' : 'div'}>
         <ul class="sources">
         ${question.sources.map((source) => {
@@ -35,4 +37,18 @@ Hillz.prototype.render = function() {
   });
 
   $('.questions-container').html(str);
+
+  $('.title').click(this.expandArgument.bind(this));
+};
+
+Hillz.prototype.onScroll = function() {
+  $('.title').each((el) => {
+  });
+};
+
+Hillz.prototype.expandArgument = function(e) {
+  const $current = $(e.currentTarget);
+  $current.off('click').css('cursor', 'default');
+
+
 };
