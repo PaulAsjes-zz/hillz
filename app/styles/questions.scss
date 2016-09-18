@@ -2,10 +2,93 @@
   .question {
     background-color: white;
     padding: 2em;
-    border-radius: 20px;
+    border-radius: 10px;
+    margin: 2em;
+
+    $titlered: #e24252;
+    $border: #c2e1f5;
 
     .title {
-      font-size: 24px;
+      position: relative;
+      background: $titlered;
+      border: 4px solid $border;
+      border-radius: 10px;
+
+      p {
+        padding: 1em;
+        color: #ddf8c6;
+        text-align: center;
+        font-size: 42px;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      }
+
+      &:after, &:before {
+        right: 100%;
+        top: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+      }
+
+      &:after {
+        border-color: rgba(136, 183, 213, 0);
+        border-right-color: $titlered;
+        border-width: 30px;
+        margin-top: -30px;
+      }
+
+      &:before {
+          // border-color: rgba(194, 225, 245, 0);
+          border-right-color: $border;
+          border-width: 36px;
+          margin-top: -36px;
+      }
+    }
+
+    .argument {
+      position: relative;
+      background: $muricablue;
+      border: 4px solid $border;
+      border-radius: 10px;
+
+      ul, div {
+        padding: 1em;
+        color: #ddf8c6;
+        text-align: center;
+        font-size: 42px;
+        font-weight: bold;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      }
+
+      &:after, &:before {
+        left: 100%;
+        top: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+      }
+
+      &:after {
+        border-color: rgba(136, 183, 213, 0);
+        border-left-color: $muricablue;
+        border-width: 30px;
+        margin-top: -30px;
+      }
+
+      &:before {
+        border-color: rgba(194, 255, 245, 0);
+        border-left-color: $border;
+        border-width: 36px;
+        margin-top: -36px;
+      }
     }
   }
 }

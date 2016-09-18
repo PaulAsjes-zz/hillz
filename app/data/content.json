@@ -1,10 +1,19 @@
 {
-  "questions": [{
-    "title": "Hillary defies the establishment",
-    "argument": "Argument goes here",
-    "sources": [
-      "http://www.dailykos.com/story/2015/9/17/1422403/-Hillary-Clinton-s-Record-of-Accomplishments",
-      "https://thecontrarianblogger.com/2016/08/24/the-morons-case-for-hillary-clinton-because-some-of-you-really-are-that-stupid/"
-    ]
-  }]
+  "questions": [
+    {
+      "title": "Hillary defies the establishment!",
+      "argument": "Argument goes here",
+      "sources": [
+        "http://www.dailykos.com/story/2015/9/17/1422403/-Hillary-Clinton-s-Record-of-Accomplishments",
+        "https://thecontrarianblogger.com/2016/08/24/the-morons-case-for-hillary-clinton-because-some-of-you-really-are-that-stupid/"
+      ]
+    },
+    {
+      "title": "Hillary was mean to a dog!",
+      "argument": "That's dumb and you know it",
+      "sources": [
+        "http://caitlin.com"
+      ]
+    }
+  ]
 }

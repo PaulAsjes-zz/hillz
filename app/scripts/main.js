@@ -19,11 +19,11 @@ Hillz.prototype.render = function() {
     const isArgumentList = Array.isArray(question.argument);
     str +=`
       <div class="question">
-        <h3 class="title">${question.title}</h3>
+        <h3 class="title"><p>${question.title}</p></h3>
         <${isArgumentList ? 'ul' : 'div'} class="argument">${isArgumentList ?
           question.argument.map((bullet, index) => {
             return `<li>${bullet}</li>`;
-          }) : question.argument}
+          }) : `<div>${question.argument}</div>`}
         </${isArgumentList ? 'ul' : 'div'}>
         <ul class="sources">
         ${question.sources.map((source) => {
