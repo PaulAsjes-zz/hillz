@@ -21,7 +21,7 @@ Hillz.prototype.render = function() {
     const isArgumentList = Array.isArray(question.argument);
     str +=`
       <div class="question">
-        <h3 class="title animated"><p>${question.title}</p></h3>
+        <h3 class="title animated"><p>${question.title}</p><div class="more">Click for the short response</div></h3>
         <${isArgumentList ? 'ul' : 'div'} class="argument-container animated">${isArgumentList ?
           question.argument.map((bullet, index) => {
             return `<li class="argument">${bullet}${index === question.argument.length - 1 ? `<div class="source">Click to see sources</div>` : ''}</li>`;
@@ -47,7 +47,11 @@ Hillz.prototype.onScroll = function() {
 };
 
 Hillz.prototype.expandArgument = function(e) {
-  $(e.currentTarget)
+  const $title = $(e.currentTarget);
+
+  $title.find('.more').hide();
+
+  $title
     .off('click')
     .css('cursor', 'default')
     .next()
