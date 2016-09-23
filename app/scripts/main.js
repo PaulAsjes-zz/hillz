@@ -10,10 +10,24 @@ $(function() {
 function Hillz(data) {
   this.data = data;
   this.deadline = '2016-11-08';
+  //this.homepage();
   this.render();
   this.initializeClock('clockdiv', this.deadline);
 
   // window.addEventListener('scroll', this.onScroll);
+}
+
+Hillz.prototype.homepage = function() {
+  let str = '';
+  str += `
+    <div class="question">
+      <div class="button-container">
+        <div class="round-button"><div class="round-button-circle stats">stats</div></div>
+        <div class="round-button"><div class="round-button-circle arg">counterarguments</div></div>
+      </div>
+    </div>
+  `
+  $('.questions-container').html(str);
 }
 
 Hillz.prototype.render = function() {
@@ -89,10 +103,10 @@ Hillz.prototype.initializeClock = function(id, endtime){
   var _this = this
   var timeinterval = setInterval(function(){
     var t = _this.getTimeRemaining(endtime);
-    clock.innerHTML = 'days: ' + t.days + '<br>' +
-                      'hours: '+ t.hours + '<br>' +
-                      'minutes: ' + t.minutes + '<br>' +
-                      'seconds: ' + t.seconds;
+    clock.innerHTML = '' + t.days + ':' +
+                      ''+ t.hours + ':' +
+                      '' + t.minutes + ':' +
+                      '' + t.seconds;
     if(t.total<=0){
       clearInterval(timeinterval);
     }

@@ -10,7 +10,7 @@ $muricared: #E0162B;
 
 .browserupgrade {
   margin: 0.2em 0;
-  background: #ccc;
+  background: #fff;
   color: #000;
   padding: 0.2em 0;
 }
@@ -19,7 +19,7 @@ $muricared: #E0162B;
 body {
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: $muricablue;
+  background-color: #fff;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -40,13 +40,15 @@ body {
     margin-bottom: 0;
     line-height: 40px;
     padding-bottom: 19px;
+    color: $muricablue;
+    text-align: left;
   }
 }
 
 /* Custom page footer */
 .footer {
   padding-top: 19px;
-  color: #ffffff;
+  color: $muricablue;
   border-top: 1px solid #e5e5e5;
 
   a {
@@ -61,10 +63,18 @@ body {
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #fff;
+  background-color: #fff;
+  padding-top:1em;
+  padding-bottom:1em;
 
   p {
     font-size: 18px;
+  }
+
+  #clockdiv {
+    font-size:6em;
+    color:$muricared;
   }
 }
 
