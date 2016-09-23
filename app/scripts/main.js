@@ -24,7 +24,7 @@ Hillz.prototype.render = function() {
         <h3 class="title animated"><p>${question.title}</p><div class="more">Click for the short response</div></h3>
         <${isArgumentList ? 'ul' : 'div'} class="argument-container animated">${isArgumentList ?
           question.argument.map((bullet, index) => {
-            return `<li class="argument">${bullet}${index === question.argument.length - 1 ? `<div class="source">Click to see sources</div>` : ''}</li>`;
+            return `<li class="argument">${bullet}${index === question.argument.length - 1 ? '<div class="source">Click to see sources</div>' : ''}</li>`;
           }).join('') : `<div class="argument animated">${question.argument}<div class="source">Click to see sources</div></div>`}
         </${isArgumentList ? 'ul' : 'div'}>
         <ul class="sources">
