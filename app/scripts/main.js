@@ -9,8 +9,9 @@ $(function() {
 
 function Hillz(data) {
   this.data = data;
-
+  this.deadline = '2016-11-08';
   this.render();
+  this.initializeClock('clockdiv', this.deadline);
 
   // window.addEventListener('scroll', this.onScroll);
 }
@@ -66,4 +67,34 @@ Hillz.prototype.showSource = function(e) {
     .closest('.question')
     .find('.sources')
     .slideDown();
+};
+
+Hillz.prototype.getTimeRemaining = function(endtime){
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor( (t/1000) % 60 );
+  var minutes = Math.floor( (t/1000/60) % 60 );
+  var hours = Math.floor( (t/(1000*60*60)) % 24 );
+  var days = Math.floor( t/(1000*60*60*24) );
+  return {
+    'total': t,
+    'days': days,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
+};
+
+Hillz.prototype.initializeClock = function(id, endtime){
+  var clock = document.getElementById(id);
+  var _this = this
+  var timeinterval = setInterval(function(){
+    var t = _this.getTimeRemaining(endtime);
+    clock.innerHTML = 'days: ' + t.days + '<br>' +
+                      'hours: '+ t.hours + '<br>' +
+                      'minutes: ' + t.minutes + '<br>' +
+                      'seconds: ' + t.seconds;
+    if(t.total<=0){
+      clearInterval(timeinterval);
+    }
+  },1000);
 };
