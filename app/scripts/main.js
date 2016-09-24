@@ -103,6 +103,9 @@ Hillz.prototype.initializeClock = function(id, endtime){
   var _this = this
   var timeinterval = setInterval(function(){
     var t = _this.getTimeRemaining(endtime);
+    t.hours = (t.hours < 10) ? '0' + t.hours : t.hours;
+    t.minutes = (t.minutes < 10) ? '0' + t.minutes : t.minutes;
+    t.seconds = (t.seconds < 10) ? '0' + t.seconds : t.seconds;
     clock.innerHTML = '' + t.days + ':' +
                       ''+ t.hours + ':' +
                       '' + t.minutes + ':' +
