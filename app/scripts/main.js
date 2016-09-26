@@ -44,7 +44,11 @@ Hillz.prototype.render = function() {
         </${isArgumentList ? 'ul' : 'div'}>
         <ul class="sources">
         ${question.sources.map((source) => {
-          return `<li><a href="${source}" target="_blank">${source}</a></li>`;
+          if (typeof source === 'object') {
+            return `<li>${source.title}<br /><a href="${source.url}" target="_blank">${source.url}</a></li>`;
+          } else {
+            return `<li><a href="${source}" target="_blank">${source}</a></li>`;
+          }
         }).join('')}
         </ul>
       </div>
