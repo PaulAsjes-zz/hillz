@@ -4,7 +4,8 @@
   "dependencies": {
     "bootstrap-sass": "~3.3.5",
     "modernizr": "~2.8.1",
-    "animate.css": "^3.5.2"
+    "animate.css": "^3.5.2",
+    "odometer": "^0.4.7"
   },
   "overrides": {
     "bootstrap-sass": {
