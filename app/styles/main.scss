@@ -8,6 +8,8 @@ $muricared: #E0162B;
 
 @import "questions";
 
+@import 'https://fonts.googleapis.com/css?family=Oswald|PT+Sans+Narrow';
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #fff;
@@ -45,7 +47,7 @@ body {
     text-align: left;
     font-size:3em;
     font-weight:bold;
-    font-family: "Impact";
+    font-family: 'Oswald', sans-serif;
   }
 }
 
@@ -54,9 +56,10 @@ body {
   padding-top: 19px;
   color: $muricablue;
   border-top: 1px solid #e5e5e5;
+  text-align: center;
 
   a {
-    color: #ccc;
+    color: $muricablue;
   }
 }
 
