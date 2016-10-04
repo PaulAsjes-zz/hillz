@@ -12,12 +12,21 @@
     $border: #c2e1f5;
     $ballooncolour: #fff;
 
+    $break-small: 320px;
+
     .sources {
       display: none;
+      word-wrap: break-word;
+
+      @media screen and (min-width: $break-small) {
+        width: 300px;
+      }
     }
+
     .button-container {
       text-align: center;
     }
+
     .round-button {
       display: inline-block;
       padding: 0 20px;
@@ -98,6 +107,22 @@
           border-width: 36px;
           margin-top: -36px;
       }
+
+      @media screen and (min-width: $break-small) {
+        p {
+          font-size: 30px;
+        }
+
+        &:after {
+          border-width: 20px;
+          margin-top: -20px;
+        }
+
+        &:before {
+          border-width: 26px;
+          margin-top: -26px;
+        }
+      }
     }
 
     .argument-container {
@@ -158,6 +183,18 @@
         .twitter-hashtag-button {
           float: right;
           margin-top: -15px;
+        }
+
+        @media screen and (min-width: $break-small) {
+          &:after {
+            border-width: 20px;
+            margin-top: -20px;
+          }
+
+          &:before {
+            border-width: 26px;
+            margin-top: -26px;
+          }
         }
       }
     }

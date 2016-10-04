@@ -2,6 +2,9 @@ $icon-font-path: '../fonts/';
 $muricablue: #0052A5;
 $muricared: #E0162B;
 
+// responsive size
+$break-small: 320px;
+
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
@@ -45,9 +48,14 @@ body {
     padding-bottom: 19px;
     color: $muricablue;
     text-align: left;
-    font-size:3em;
-    font-weight:bold;
+    font-size: 3em;
+    font-weight: bold;
     font-family: 'Oswald', sans-serif;
+
+    @media screen and (min-width: $break-small) {
+      font-size: 2em;
+      text-align: center;
+    }
   }
 }
 
@@ -82,6 +90,19 @@ body {
   #clockdiv {
     font-size:6em;
     color:$muricared;
+
+    @media screen and (min-width: $break-small) {
+      font-size: 4em;
+    }
+  }
+}
+
+.intro {
+  @media screen and (min-width: $break-small) {
+    font-size: 12px;
+    margin: 0 auto;
+    max-width: 300px;
+    text-align: center;
   }
 }
 
