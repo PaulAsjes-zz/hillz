@@ -23,14 +23,17 @@ function Hillz(data) {
 Hillz.prototype.render = function() {
   let str = '';
   this.data.questions.forEach((question, index) => {
+    const twitter = `<a href="https://twitter.com/intent/tweet?button_text=ReasonForHillary" class="twitter-hashtag-button" data-text="I found this reason for Hillary: http://www.thereasonguide.com/#${question.link} #ReasonForHillary" data-show-count="false">Tweet this</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>`;
+
     const isArgumentList = Array.isArray(question.argument);
+
     str +=`
       <div class="question">
-        <h3 class="title animated"><p>${question.title}</p><div class="more">Click for the short response</div></h3>
+        <h3 class="title animated"><p><a name=${question.link}>${question.title}</a></p><div class="more">Click for the short response</div></h3>
         <${isArgumentList ? 'ul' : 'div'} class="argument-container animated">${isArgumentList ?
           question.argument.map((bullet, index) => {
-            return `<li class="argument">${bullet}${index === question.argument.length - 1 ? '<div class="source">Click to see sources</div>' : ''}</li>`;
-          }).join('') : `<div class="argument animated">${question.argument}<div class="source">Click to see sources</div></div>`}
+            return `<li class="argument">${bullet}${index === question.argument.length - 1 ? `<div class="source">Click to see sources</div>${twitter}` : ''}</li>`;
+          }).join('') : `<div class="argument animated">${question.argument}<div class="source">Click to see sources</div>${twitter}</div>`}
         </${isArgumentList ? 'ul' : 'div'}>
         <ul class="sources">
         ${question.sources.map((source) => {

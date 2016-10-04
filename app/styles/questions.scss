@@ -51,6 +51,11 @@
       border-radius: 10px;
       cursor: pointer;
 
+      a {
+        text-decoration: none;
+        color: $ballooncolour;
+      }
+
       p {
         padding: 1em;
         color: $ballooncolour;
@@ -148,6 +153,11 @@
           margin-top: 10px;
           font-size: 14px;
           cursor: pointer;
+        }
+
+        .twitter-hashtag-button {
+          float: right;
+          margin-top: -15px;
         }
       }
     }

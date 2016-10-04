@@ -2,6 +2,7 @@
   "questions": [
     {
       "title": "Hillary defines the establishment!",
+      "link": "defines-the-establishment",
       "argument": [
         "Yes, Hillary is definitively a seasoned politician who has been at the center of politics for decades, which is exactly why she’s the best candidate for the job",
         "<b>She’s got the experience:</b> As a former secretary of state, U.S. senator, and first lady, no one is more qualified to be president than Hillary. She’s lived with the complicated global and local issues for decades and understands the nuance necessary to make good decisions. With the uncertain political and economic climate we need someone with a clear head and perspective.",
@@ -21,6 +22,7 @@
     },
     {
       "title": "She's corrupt! Look at all those scandals!",
+      "link": "what-about-her-scandals",
       "argument": [
         "Hillary’s been in the public spotlight for a long time. And she’s been the subject of attacks and campaigns to smear her for that long",
         "<b>Accusation doesn’t equal guilt:</b> Let’s first remember, that an accusation doesn’t equal guilt.",
@@ -48,6 +50,7 @@
     },
     {
       "title": "Those emails though...",
+      "link": "what-about-those-emails",
       "argument": [
         "Yes, this is unfortunate. Hillary messed up by having the server in the first place and didn’t handle the whole investigation as well as she could have.",
         "Now, let’s ask ourselves, so what? Big picture, what does this email thing mean?  With everything she has going for her and everything her opponent doesn’t, should we really care?  Here’s the 3 main questions this all distills down to:",
@@ -87,7 +90,8 @@
       ]
     },
     {
-      "title": "And she’s owned by Wallstreet!",
+      "title": "And she’s owned by Wall Street!",
+      "link": "she-is-owned-by-wallstreet",
       "argument": [
         "There’s a lot of attention on Hillary’s Wall Street speeches. Yes, she likely said some corporate platitudes she regrets. But let’s look into this a level deeper:",
         "<b>She should have been talking to and should keep talking to Wall Street:</b> As a Senator from NY, Wall Street was a major constituent.  The NY Stock Exchange and NASDEQ are the 1st and 2nd largest stock exchanges in the world.  Financial services account for more than 35 percent of the New York City’s employment income. Recent labor stats show that almost 500,000 people are employed in finance in NYC. Wall Street contributes wealth to our nation and also contributes to financial problems. Our politicians NEED to talk to them",
@@ -125,6 +129,7 @@
     },
     {
       "title": "She’s untrustworthy!",
+      "link": "she-is-untrustworthy",
       "argument": [
         "“Truth” is defined as accordance with fact or reality.  Politifact, a Pulitzer prize-winning fact-checking organization analyzes what politicians say and has rated Hillary’s statements throughout the years. They found 72% of her statements truthful (about the same as Bernie Sanders). By comparison, Trump’s statements were 70% false.",
         "The human side: Imagine the deepest, darkest secrets of your family and your sex life were the subject of national debate, talk shows, and satire for years… wouldn’t you keep things a little closer to your chest?  Wouldn’t you want some privacy? Denying being sick is something we all do",
@@ -143,6 +148,7 @@
     },
     {
       "title": "She’s power hungry!",
+      "link": "she-is-power-hungry",
       "argument": "Yes! She’s running for President of The United States, the most powerful position in the world! Anyone running for public office wants power.",
       "sources": [{
         "title": "There’s a good chance there’s some underlying sexism in this statement",
@@ -151,6 +157,7 @@
     },
     {
       "title": "Look what she did in Benghazi!",
+      "link": "what-about-benghazi",
       "argument": [
         "What happened in Benghazi was a tragedy and it’s good that Congress is trying to learn the truth about what happened to make sure the mistakes that were made don’t happen again.  What is wrong though is how this has been politicized and used as a witch hunt against Hillary.  In the months of investigation nothing has surfaced indicating her responsibility for the deaths of the American Ambassador and 3 others.",
         "Members of Congress accuse Hillary of not responding to emails asking for more resources for the Embassy that were addressed to her… as we saw in her email scandal she received thousands of emails and cables emails addressed to her from the approximately 307 US embassies around the world. She cannot be expected to personally oversee all of those details… that’s what delegation is for.",
@@ -172,6 +179,7 @@
     },
     {
       "title": "She voted for Iraq!",
+      "link": "she-voted-for-iraq",
       "argument": [
         "<b>Iraq is not on Hillary and saying that is forgetting 8 years of Bush</b>",
         "Iraq is on Bush and Cheney and Rumsfeld and Wolfowitz and a whole slew of others who misled the American people, Congress, and the world.",
