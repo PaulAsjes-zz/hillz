@@ -4,6 +4,7 @@ $muricared: #E0162B;
 
 // responsive size
 $break-small: 320px;
+$break-large: 768px;
 
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
@@ -52,7 +53,7 @@ body {
     font-weight: bold;
     font-family: 'Oswald', sans-serif;
 
-    @media screen and (min-width: $break-small) {
+    @media (min-width: $break-small) and (max-width: $break-large) {
       font-size: 2em;
       text-align: center;
     }
@@ -91,14 +92,14 @@ body {
     font-size:6em;
     color:$muricared;
 
-    @media screen and (min-width: $break-small) {
+    @media (min-width: $break-small) and (max-width: $break-large) {
       font-size: 4em;
     }
   }
 }
 
 .intro {
-  @media screen and (min-width: $break-small) {
+  @media (min-width: $break-small) and (max-width: $break-large) {
     font-size: 12px;
     margin: 0 auto;
     max-width: 300px;
@@ -132,7 +133,7 @@ body {
 }
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $break-large) {
   .container {
     max-width: 730px;
   }

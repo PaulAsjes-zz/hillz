@@ -13,12 +13,13 @@
     $ballooncolour: #fff;
 
     $break-small: 320px;
+    $break-large: 768px;
 
     .sources {
       display: none;
       word-wrap: break-word;
 
-      @media screen and (min-width: $break-small) {
+      @media (min-width: $break-small) and (max-width: $break-large) {
         width: 300px;
       }
     }
@@ -108,7 +109,7 @@
           margin-top: -36px;
       }
 
-      @media screen and (min-width: $break-small) {
+      @media (min-width: $break-small) and (max-width: $break-large) {
         p {
           font-size: 30px;
         }
@@ -185,7 +186,7 @@
           margin-top: -15px;
         }
 
-        @media screen and (min-width: $break-small) {
+        @media (min-width: $break-small) and (max-width: $break-large) {
           &:after {
             border-width: 20px;
             margin-top: -20px;
