@@ -23,7 +23,7 @@ function Hillz(data) {
 Hillz.prototype.render = function() {
   let str = '';
   this.data.questions.forEach((question, index) => {
-    const twitter = `<a href="https://twitter.com/intent/tweet?button_text=ReasonForHillary" class="twitter-hashtag-button" data-text="I found this reason for Hillary: http://www.thereasonguide.com/#${question.link} #ReasonForHillary" data-show-count="false">Tweet this</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>`;
+    const twitter = `<a href="https://twitter.com/intent/tweet?button_text=ReasonForHillary" class="twitter-hashtag-button" data-text="I found this reason for Hillary: http://thereasonguide.com/#${question.link} #ReasonForHillary" data-show-count="false">Tweet this</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>`;
 
     const isArgumentList = Array.isArray(question.argument);
 
