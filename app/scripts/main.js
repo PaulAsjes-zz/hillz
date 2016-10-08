@@ -68,8 +68,8 @@ Hillz.prototype.expandArgument = function(e) {
 };
 
 Hillz.prototype.showSource = function(e) {
-  console.log($(e.currentTarget).closest('.question').find('.sources'));
   $(e.currentTarget)
+    .off('click')
     .closest('.question')
     .find('.sources')
     .slideDown();
