@@ -116,10 +116,17 @@ body {
   }
 
   .btn-success{
-    border-color: #fff;
+    border-color:(#4d4d4d);
     background-color: #fff;
-    border-color: #fff;
-    color: #404040;
+    color: #4d4d4d;
+  }
+
+  .btn-success:hover{
+    color: $muricared;
+    img{
+      filter: invert(100%);
+    }
+    border-color:($muricared);
   }
 
 }
