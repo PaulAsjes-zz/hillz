@@ -56,24 +56,52 @@ Hillz.prototype.render = function() {
 Hillz.prototype.expandArgument = function(e) {
   const $title = $(e.currentTarget);
 
-  $title.find('.more').hide();
+  $title.find('.more').html("Click to close");
 
   $title
-    .off('click')
-    .css('cursor', 'default')
+    .click(this.closeArgument.bind(this));
+
+  $title
     .next()
     .addClass('active bounceInRight')
     .find('.source')
     .click(this.showSource.bind(this));
 };
 
+Hillz.prototype.closeArgument = function(e) {
+  const $title = $(e.currentTarget);
+
+  $title.next().removeClass('active bounceInRight'); /* TODO - can this be animated better */
+
+  $title.find('.more')
+    .html("Click for the short response")
+
+  this.closeSource($title.parent().find('sources')) /*TODO - how the eff do i handle this - sources aren't hidden*/
+
+  $title.click(this.expandArgument.bind(this))
+}
+
 Hillz.prototype.showSource = function(e) {
   $(e.currentTarget)
-    .off('click')
+    .html('close sources')
     .closest('.question')
     .find('.sources')
     .slideDown();
+
+  $(e.currentTarget)
+    .click(this.closeSource.bind(this))
 };
+
+Hillz.prototype.closeSource = function(e) { /*TODO - occasionally something weird happens and it repeatedly open/closes*/
+  $(e.currentTarget)
+    .html('Click to see sources')
+    .closest('.question')
+    .find('.sources')
+    .slideUp();
+
+  $(e.currentTarget)
+    .click(this.showSource.bind(this));
+}
 
 Hillz.prototype.getTimeRemaining = function(endtime){
   const t = Date.parse(endtime) - Date.parse(new Date());
