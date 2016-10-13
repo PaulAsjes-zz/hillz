@@ -59,10 +59,13 @@ Hillz.prototype.expandArgument = function(e) {
   $title.find('.more').html("Click to close");
 
   $title
+    .off('click')
     .click(this.closeArgument.bind(this));
 
   $title
     .next()
+    .css('display', 'block')
+    .removeClass('bounceOutRight')
     .addClass('active bounceInRight')
     .find('.source')
     .click(this.showSource.bind(this));
@@ -71,19 +74,28 @@ Hillz.prototype.expandArgument = function(e) {
 Hillz.prototype.closeArgument = function(e) {
   const $title = $(e.currentTarget);
 
-  $title.next().removeClass('active bounceInRight'); /* TODO - can this be animated better */
+  $title.next()
+    .removeClass('bounceInRight')
+    .addClass('active bounceOutRight');
+
+  setTimeout(() => {
+    $title.next().css('display', 'none');
+  }, 400);
 
   $title.find('.more')
     .html("Click for the short response")
 
-  this.closeSource($title.parent().find('sources')) /*TODO - how the eff do i handle this - sources aren't hidden*/
+  this.closeSource($title.parent().find('.sources'));
 
-  $title.click(this.expandArgument.bind(this))
+  $title
+    .off('click')
+    .click(this.expandArgument.bind(this))
 }
 
 Hillz.prototype.showSource = function(e) {
   $(e.currentTarget)
-    .html('close sources')
+    .off('click')
+    .html('Click to close sources')
     .closest('.question')
     .find('.sources')
     .slideDown();
@@ -92,9 +104,11 @@ Hillz.prototype.showSource = function(e) {
     .click(this.closeSource.bind(this))
 };
 
-Hillz.prototype.closeSource = function(e) { /*TODO - occasionally something weird happens and it repeatedly open/closes*/
-  $(e.currentTarget)
-    .html('Click to see sources')
+Hillz.prototype.closeSource = function(e) {
+  const $el = e.currentTarget ? $(e.currentTarget) : $(e);
+
+  $el
+    .off('click')
     .closest('.question')
     .find('.sources')
     .slideUp();
@@ -135,11 +149,6 @@ Hillz.prototype.initializeClock = function(endtime){
 
     const time = `${t.days}${t.hours}${t.minutes}${t.seconds}`;
     odometer.update(parseInt(time, 10));
-
-   /* $('.days').html(t.days);
-    $('.hours').html(t.hours);
-    $('.minutes').html(t.minutes);
-    $('.seconds').html(t.seconds);*/
 
     if (t.total <= 0) {
       clearInterval(timeinterval);
