@@ -56,7 +56,7 @@ Hillz.prototype.render = function() {
 Hillz.prototype.expandArgument = function(e) {
   const $title = $(e.currentTarget);
 
-  $title.find('.more').html("Click to close");
+  $title.find('.more').html('Click to close');
 
   $title
     .off('click')
@@ -83,7 +83,7 @@ Hillz.prototype.closeArgument = function(e) {
   }, 400);
 
   $title.find('.more')
-    .html("Click for the short response")
+    .html('Click for the short response')
 
   this.closeSource($title.parent().find('.sources'));
 
