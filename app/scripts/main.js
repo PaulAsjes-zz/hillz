@@ -11,13 +11,6 @@ function Hillz(data) {
   this.data = data;
   this.deadline = '2016-11-08';
   this.render();
-
-  window.odometerOptions = {
-    duration: 5000,
-    auto: false
-  };
-
-  this.initializeClock(this.deadline);
 }
 
 Hillz.prototype.render = function() {
